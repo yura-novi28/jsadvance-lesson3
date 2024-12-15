@@ -1,0 +1,91 @@
+.header{
+    border-bottom: 1px solid darkgray;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 5% 25% 10% 25% 15% 15%;
+    gap: 10px;
+    &__text{
+        font-weight: 700;
+        font-size: 1em;
+    }
+}
+
+.footer-box{
+    border-top: 1px solid darkgray;
+    padding: 10px 0;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 5% 25% 10% 25% 15% 15%;
+    gap: 10px;
+    &__text{
+        font-weight: 400;
+        font-size: 1em;
+    }
+    &__text--700{
+        font-weight: 700;
+    }
+    &__btn{
+        cursor: pointer;
+        width: 100%;
+        height: 40px;
+        outline: 0;
+        border: 0;
+        border-radius: 5px;
+        background-color: #ffbc00;
+        color: #000;
+        transition: 0.2s ease-in all;
+        &:hover{
+            background-color: #dea300;
+        }
+        &:focus{
+            outline: 3px solid #ffbb00ba;
+        }
+        
+        &--red{
+            background-color: #ea4643;
+            color: #fff;
+            &:hover{
+                background-color: #d23d3b;
+            }
+            &:focus{
+                outline: 3px solid #ea4643c2;
+            }
+            &:disabled{
+                background-color: #ea4643b9;
+            }
+        }
+        &--green{
+            background-color: #1e9543;
+            color: #fff;
+            &:hover{
+                background-color: #1c833d;
+            }
+            &:focus{
+                outline: 3px solid #1e9543c2;
+            }
+            &:disabled{
+                background-color: #1e9543b9;
+            }
+        }
+    }
+    &__checkbox{
+        width: 16px;
+        height: 16px;
+    }
+    &__input{
+        width: 100%;
+        height: 40px;
+        outline: 0;
+        border: 1px solid darkgray;
+        border-radius: 5px;
+        padding-left: 5px;
+        &:focus{
+            outline: 3px solid #b0d1f5;
+            border: 1px solid #9ccafb;
+        }
+    }
+}
+
+.footer-box:nth-child(1){
+    border: 0;
+}

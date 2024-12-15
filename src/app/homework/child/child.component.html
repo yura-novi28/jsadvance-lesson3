@@ -1,0 +1,24 @@
+<header class="header">
+    <p class="header__text">#</p>
+    <p class="header__text">Task</p>
+    <p class="header__text">Check</p>
+    <p class="header__text">DONE/IN PROGRESS</p>
+    <p class="header__text">Edit</p>
+    <p class="header__text">DELETE</p>
+</header>
+<footer class="footer">
+    <div #test class="footer-box" *ngFor="let item of arrTasks; index as i">
+        <p class="footer-box__text footer-box__text--700">{{ i + 1 }}</p>
+        <p class="footer-box__text">{{ item.goal }}</p>
+        <input [(ngModel)]="item.progress" [checked]="item.progress" class="footer-box__checkbox" type="checkbox" name="checkboxCheck">
+        <p [ngStyle]="{'color': item.progress ? 'green': 'red'}" [textContent]="item.progress ? 'Done': 'In Progress'" class="footer-box__text"></p>
+        <button (click)="editTaskClick(i)" class="footer-box__btn">Edit</button>
+        <button (click)="deleteTask(i)" [disabled]="!item.progress" class="footer-box__btn footer-box__btn--red">Delete</button>
+    </div>
+    <div *ngIf="editBoolean" class="footer-box">
+        <p></p>
+        <p></p>
+        <input [(ngModel)]="inputEdit" class="footer-box__input" type="text">
+        <button (click)="editTask()" [disabled]="inputEdit.trim() == ''" class="footer-box__btn footer-box__btn--green">Save</button>
+    </div>
+</footer>

@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="header">
+        <p class="header__title">Plan your day!</p>
+        <p class="header__text">User: Ivan Ivanov. Count of Task <span>{{ spanNumber }}</span></p>
+        <form class="header-form">
+            <input name="inputTextTask" [(ngModel)]="inputAdd" type="text" class="header-form__input-txt">
+            <input (click)="sendValue()" [disabled]="inputAdd.trim() == ''" type="button" value="Add" class="header-form__input-btn">
+        </form>
+    </div>
+    <app-child [valueBoolean]="valueButton" [valueInput]="inputAdd" (valueBooleanParent)="editCheckBoolean($event)" (numberSpan)="addSpanNumber($event)"></app-child>
+</div>
